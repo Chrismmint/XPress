@@ -10,7 +10,7 @@ const seriesRouter = require('./series');
 
 //router links
 
-//apiRouter.use('/artists', artistsRouter);
+apiRouter.use('/artists', artistsRouter);
 //apiRouter.use('/series', seriesRouter);
 
 //router export

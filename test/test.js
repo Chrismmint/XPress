@@ -11,7 +11,7 @@ const seed = require('./seed.js');
 const prodDb = new sqlite3.Database('./database.sqlite');
 let testDb = new sqlite3.Database(process.env.TEST_DATABASE);
 
-describe('Artist Table', function() {
+describe.skip('Artist Table', function() {
   it('should exist', function(done) {
     prodDb.get("SELECT name FROM sqlite_master WHERE type='table' AND name='Artist'", (error, table) => {
       if (error || !table) {
@@ -95,7 +95,7 @@ describe('Artist Table', function() {
   });
 });
 
-describe('Series Table', function() {
+describe.skip('Series Table', function() {
   it('should exist', function(done) {
     prodDb.get("SELECT name FROM sqlite_master WHERE type='table' AND name='Series'", (error, table) => {
       if (error || !table) {
@@ -149,7 +149,7 @@ describe('Series Table', function() {
   });
 });
 
-describe('Issue Table', function() {
+describe.skip('Issue Table', function() {
   it('should exist', function(done) {
     prodDb.get("SELECT name FROM sqlite_master WHERE type='table' AND name='Issue'", (error, table) => {
       if (error || !table) {
@@ -259,7 +259,7 @@ describe('Issue Table', function() {
   });
 });
 
-describe('GET /api/artists', function() {
+describe.skip('GET /api/artists', function() {
   before(function(done) {
     seed.seedArtistDatabase(done);
   });
@@ -283,7 +283,7 @@ describe('GET /api/artists', function() {
   });
 });
 
-describe('GET /api/artists/:id', function() {
+describe.only('GET /api/artists/:id', function() {
   before(function(done) {
     seed.seedArtistDatabase(done);
   });
@@ -314,7 +314,7 @@ describe('GET /api/artists/:id', function() {
   });
 });
 
-describe('POST /api/artists', function() {
+describe.skip('POST /api/artists', function() {
   let newArtist;
 
   beforeEach(function(done) {

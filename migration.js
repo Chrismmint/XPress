@@ -31,7 +31,6 @@ db.serialize(function() {
           '`biography` TEXT NOT NULL, ' +
           '`is_currently_employed` INTEGER NOT NULL DEFAULT 1, ' +
           'PRIMARY KEY(`id`) )',
-          function (error) {console.log(error)}
   );
 
   db.run('CREATE TABLE IF NOT EXISTS `Series` ( ' +
